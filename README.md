@@ -15,3 +15,5 @@ Users can **create and write posts, engage with readers, and track analytics** t
 - **Database:** SQLite
 - **Language:** Python
 
+## SCREENSHOTS
+
