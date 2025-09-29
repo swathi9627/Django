@@ -1,0 +1,40 @@
+{% extends 'blog_spot/base.html' %}
+{% block title %}Post Blog{% endblock %}
+
+{% block content %}
+<div class="container mt-5 animate__animated animate__fadeInUp">
+    <!-- See All Blogger Posts Button -->
+    <div class="mb-4">
+        <a href="{% url 'reader_pg' usr=Username %}" class="btn btn-outline-primary rounded-3 shadow-sm">
+            👀 See All Blogger Posts
+        </a>
+    </div>
+
+    <!-- Welcome Message -->
+    <h3 class="fw-bold text-dark">🌟 Welcome, {{ Username }}!</h3>
+    <p class="text-muted">Write your thoughts below and post your blog:</p>
+
+    <!-- Post Form -->
+    <form method="POST" class="mb-4">
+        {% csrf_token %}
+        <div class="form-group mb-3">
+            <textarea name="pst" class="form-control rounded-4 shadow-sm" rows="5" style="resize: none;" placeholder="What's on your mind?" required></textarea>
+        </div>
+        <button type="submit" name="submit" class="btn btn-warning w-100 py-2 rounded-3 shadow-sm">
+            <i class="fas fa-paper-plane me-2"></i>Post
+        </button>
+    </form>
+
+    <!-- Previous Posts -->
+    <h4 class="mt-5 text-dark fw-semibold">📝 Your Previous Posts</h4>
+    {% for blog in blogs %}
+        <div class="card mb-3 shadow-sm border-0 rounded-4">
+            <div class="card-body bg-light">
+                <p class="card-text">{{ blog.pst }}</p>
+            </div>
+        </div>
+    {% empty %}
+        <p class="text-muted mt-3">No blog posts yet. Start writing something meaningful!</p>
+    {% endfor %}
+</div>
+{% endblock %}

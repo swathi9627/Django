@@ -1,0 +1,54 @@
+{% extends 'blog_spot/base.html' %}
+
+{% block title %}Welcome to My Blogger Platform{% endblock %}
+
+{% block content %}
+<!-- Hero Section with Turquoise Gradient Background -->
+<header class="text-white text-center py-5" style="background: linear-gradient(to right, #06beb6, #48b1bf);">
+    <div class="container py-5">
+        <h1 class="display-3 fw-bold animate__animated animate__fadeInDown">✍️ Write. Share. Inspire.</h1>
+        <p class="lead animate__animated animate__fadeInUp">Your thoughts matter. Start your blogging journey today.</p>
+        <a href="{% url 'signup' %}" class="btn btn-warning btn-lg mt-3 shadow rounded-3 animate__animated animate__zoomIn">
+            <i class="fas fa-user-plus me-2"></i>Become a Blogger
+        </a>
+    </div>
+</header>
+
+<!-- Features Section -->
+<section class="container my-5">
+    <div class="row text-center">
+        <div class="col-md-4 mb-4 animate__animated animate__fadeInLeft">
+            <div class="card border-0 shadow-sm rounded-4 h-100 p-4">
+                <i class="fas fa-pen fa-3x text-primary mb-3"></i>
+                <h4 class="fw-bold">Create & Write</h4>
+                <p>Craft engaging blog posts with our user-friendly editor.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4 animate__animated animate__fadeInUp">
+            <div class="card border-0 shadow-sm rounded-4 h-100 p-4">
+                <i class="fas fa-comments fa-3x text-success mb-3"></i>
+                <h4 class="fw-bold">Engage & Connect</h4>
+                <p>Interact with readers and grow your community.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4 animate__animated animate__fadeInRight">
+            <div class="card border-0 shadow-sm rounded-4 h-100 p-4">
+                <i class="fas fa-chart-line fa-3x text-info mb-3"></i>
+                <h4 class="fw-bold">Track & Grow</h4>
+                <p>View analytics and increase your blog’s reach.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<div class="py-5 text-center" style="background: linear-gradient(to right, #a0e9e0, #cbf1f5);">
+    <div class="container">
+        <h2 class="mb-3 fw-bold text-dark">Already a Member?</h2>
+        <p class="mb-4 text-muted">Sign in to manage your posts and explore the latest from other bloggers.</p>
+        <a href="{% url 'signin' %}" class="btn btn-outline-primary btn-lg px-4 py-2 rounded-3">
+            <i class="fas fa-sign-in-alt me-2"></i>Sign In
+        </a>
+    </div>
+</div>
+{% endblock %}
